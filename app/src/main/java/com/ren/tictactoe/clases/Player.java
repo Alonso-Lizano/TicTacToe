@@ -3,9 +3,9 @@ package com.ren.tictactoe.clases;
 public class Player {
 
     private String name;
-    private char character;
+    private String character;
 
-    public Player(String name, char character) {
+    public Player(String name, String character) {
         this.name = name;
         this.character = character;
     }
@@ -18,11 +18,11 @@ public class Player {
         this.name = name;
     }
 
-    public char getCharacter() {
+    public String getCharacter() {
         return character;
     }
 
-    public void setCharacter(char character) {
+    public void setCharacter(String character) {
         this.character = character;
     }
 }
