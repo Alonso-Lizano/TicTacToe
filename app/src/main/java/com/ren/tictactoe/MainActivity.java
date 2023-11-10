@@ -34,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
         configureButtons();
     }
 
+    /**
+     * Configura los botones del juego
+     * Asigna los botones al array 'buttons', configura sus listeners y gestiona los clics.
+     */
     private void configureButtons() {
         buttons = new Button[3][3];
         for (int i = 0; i < 3; i++) {
@@ -76,16 +80,27 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Actualiza la interfaz de usuario (UI) del juego al realizar un movimiento.
+     *
+     * @param row    La fila del movimiento.
+     * @param column La columna del movimiento.
+     */
     private void updateUI(int row, int column) {
         buttons[row][column].setText(game.getTable()[row][column]);
     }
 
-
+    /**
+     * Reinicia el juego, creando un nuevo objeto Game y reiniciando la UI.
+     */
     private void resetGame() {
         game = new Game(game.getPlayer1(), game.getPlayer2());
         resetUI();
     }
 
+    /**
+     * Reinicia la UI, estableciendo el texto de todos los botones a cadena vacía.
+     */
     private void resetUI() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -94,7 +109,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * Muestra un mensaje corto en forma de Toast.
+     *
+     * @param message El mensaje a mostrar.
+     */
     private void showMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
